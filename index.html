@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="js/knockout-2.2.1.js"></script>
+		<title>RoomiesPay</title> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
+		<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+		<script type="text/javascript">
+			function AppViewModel() {
+			   var self = this;
+			    self.contacts = ko.observableArray([]);
+
+			    //self.addContact = function(){
+			    	self.contacts.push({'fname':'Shubham', 'lname':'Goyal', 'mobile': '8698262527', 'email':'mail.goyalshubham@gmail.com'});
+			    //}
+			};
+			
+			function init()
+			{
+				ko.applyBindings(new AppViewModel());
+			}			
+
+		</script>
+	</head>
+	
+	<body onload='init()'>
+		<div data-role="page" id="home" style="background-color:white;">
+			<div data-role="header">
+				<h1>RoomiePay</h1>
+				<!-- <a href="#addProfile" data-icon="add" class="ui-btn-right">Add Roomie</a> -->
+			</div>
+
+			<div data-role="content">	
+				<!--<ul data-role="listview" data-bind="foreach: contacts">
+					<li><a href="#"><span data-bind="text: fname + ' ' + lname"> </span></a></li>					
+				</ul>-->
+				<div id="logo"></div>
+				<ul data-role="listview" data-inset="true" data-theme="e">
+					<li><a href="#"><span>Create your room</span></a></li>					
+					<li><a href="#"><span>Enter to your room</span></a></li>
+				</ul>
+				<div>
+					RoomiesPay is a mobile application that can be helps you to track your common expenses and can easly divided amoung your roomies.
+				</div>
+				<div>
+					&nbsp;
+				</div>
+				<div>
+					Designed and developed by <b><font color='#FF0000'>Foxians</font>Interactives</b>
+				</div>
+			</div>
+
+			<!-- <div data-role="footer" data-position="fixed"> 
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#" data-icon="home">Home</a></li>
+						<li><a href="#">Expense</a></li>
+						<li><a href="#">Setting</a></li>
+					</ul>
+				</div>
+			</div>  -->
+		</div>		
+	</body>
+</html>
